@@ -1,0 +1,88 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #131921;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  color: white;
+}
+
+.header-logo {
+  width: 100px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.header-search {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+  margin: 0 20px;
+}
+
+.header-search-input {
+  height: 35px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+}
+
+.header-search svg {
+  padding: 10px;
+  font-size: 40px; /* حجم أكبر */
+  background-color: #febd69;
+  color: black;
+  cursor: pointer;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.header-link {
+  color: white;
+  text-decoration: none;
+}
+
+.header-option {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.header-optionLineOne {
+  font-size: 12px;
+}
+
+.header-optionLineTwo {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.header-optionBasket {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.chart-style {
+  font-size: 28px;
+  color: white;
+}
+
+.header-bashetCount {
+  margin-left: 5px;
+  font-weight: 700;
+  color: #febd69;
+}
