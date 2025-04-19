@@ -7,8 +7,14 @@ import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlin
 import  '../assets/style/nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAmazon } from '@fortawesome/free-brands-svg-icons';
+import { useAuth } from '../context/GlobalState';
+import { auth } from '../firebase';
 
 export default function Nav() {
+  const {user ,basket} = useAuth() ;
+  const handleAuothontication = () => {
+    auth.signOut() 
+  }
   return (
     <div className='header'>
      
@@ -24,12 +30,17 @@ export default function Nav() {
 
 
       <div className='header-nav flex items-center '>
-        <Link to="/login" className='header-link'>
-          <div className="header-option">
-            <div className="header-optionLineOne">Hello Guest</div>
-            <div className="header-optionLineTwo">Sign In</div>
-          </div>
-        </Link>
+      <Link to={user ? '#' : '/login'} className='header-link'>
+  <div className="header-option" onClick={user ? handleAuothontication : null}>
+    <div className="header-optionLineOne">
+      Hello {user ? user.email : 'Guest'}
+    </div>
+    <div className="header-optionLineTwo">
+      {user ? 'Sign Out' : 'Sign In'}
+    </div>
+  </div>
+</Link>
+
         <Link to="/orders" className='header-link'>
           <div className="header-option">
             <div className="header-optionLineOne">Retrns</div>
@@ -43,7 +54,7 @@ export default function Nav() {
         <Link to="/checkout" className='header-link'>
           <div className="header-optionBasket">
            <ShoppingBasketOutlinedIcon className='chart-style'/>
-            <span  className='header-optionLineTwo header-bashetCount'>5</span>
+            <span  className='header-optionLineTwo header-bashetCount'>{basket?basket.length:'0'}</span>
           
           </div>
         </Link>

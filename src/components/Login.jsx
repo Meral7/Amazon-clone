@@ -1,26 +1,42 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../assets/style/login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAmazon } from '@fortawesome/free-brands-svg-icons';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase.js';
 import { useAuth } from '../context/GlobalState.jsx';
 
 export default function Login() {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-console.log(user);
+console.log({auth})
+  // ✅ log in
+  const signIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((auth) => {
+        if (auth) {
+          console.log('Signed in:', auth.user);
+          navigate('/');
+        }
+      })
+      .catch((error) => alert(error.message));
+  };
+
+  // create new account
   const register = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log("User registered:", userCredential.user);
+      .then((auth) => {
+        if (auth) {
+          console.log('User registered:', auth.user);
+          navigate('/');
+        }
       })
-      .catch((error) => {
-        console.error("Registration error:", error.message);
-      });
+      .catch((error) => alert(error.message));
   };
 
   return (
@@ -31,7 +47,7 @@ console.log(user);
 
       <div className="login-container">
         <h1>Log In Page</h1>
-        <form className='form-page'>
+        <form className='form-page' onSubmit={signIn}>
           <h5>E-mail</h5>
           <input
             type='email'
