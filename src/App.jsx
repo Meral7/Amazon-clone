@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { auth } from './firebase';
 import { useAuth } from './context/GlobalState';
 import Home from './components/Home';
+import Payment from './components/Payment';
 function App() {
   const {dispatch} = useAuth()
 useEffect(() => {
@@ -36,8 +37,9 @@ useEffect(() => {
         <Home/>
         </>}/>
         <Route path="/login" element={<Login />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkout" element={<>  <Nav/> <Checkout /></>} />
           <Route path="/orders" element={<Orders />} />
+          <Route path="/payment" element={<Payment />} />
         <Route path='*' element={<h1>not found</h1>}/>
       </Routes>
 

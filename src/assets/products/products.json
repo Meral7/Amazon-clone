@@ -6,7 +6,8 @@
         "price": 29.99,
         "description": "Description for Product A",
         "imageUrl": "/products/1.png",
-        "rating": 4
+        "rating": 4,
+        "category": "Electronics"
         },
         {
         "id": 2,
@@ -14,7 +15,8 @@
         "price": 39.99,
         "description": "Description for Product B",
         "imageUrl": "/products/2.png",
-        "rating": 5
+        "rating": 5,
+        "category": "Electronics"
         },
         {
         "id": 3,
@@ -22,7 +24,8 @@
         "price": 49.99,
         "description": "Description for Product C",
         "imageUrl": "/products/3.png",
-        "rating": 4
+        "rating": 4,
+        "category": "Electronics"
         },
         {
         "id": 4,
@@ -30,14 +33,16 @@
         "price": 59.99, 
         "description": "Description for Product D",
         "imageUrl": "/products/4.png",
-        "rating": 4
+        "rating": 4,
+        "category": "Electronics"
         },   {
             "id": 5,
             "name": "Product A",
             "price": 29.99,
             "description": "Description for Product A",
             "imageUrl": "/products/5.png",
-            "rating": 4
+            "rating": 4,
+        "category": "Electronics"
             },
             {
             "id": 6,
@@ -45,7 +50,8 @@
             "price": 39.99,
             "description": "Description for Product B",
             "imageUrl": "/products/6.png",
-            "rating": 5
+            "rating": 5,
+        "category": "Electronics"
             },
             {
             "id": 7,
@@ -53,7 +59,8 @@
             "price": 49.99,
             "description": "Description for Product C",
             "imageUrl": "/products/3.png",
-            "rating": 4
+            "rating": 4,
+        "category": "Electronics"
             }
        
     ]

@@ -4,3 +4,11 @@
     display: block;
     margin: 0 auto;
 }
+.card-color
+{
+  background-color:#E5E7EB;
+    
+}
+.card-color:hover{
+    background-color:#bdc3c7;
+}
