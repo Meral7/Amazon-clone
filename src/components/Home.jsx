@@ -18,6 +18,7 @@ export default function Home() {
       rating={product.rating}
       image={product.imageUrl}
       category={product.category}
+      description={product.description}
     />
   ))}
 </div>

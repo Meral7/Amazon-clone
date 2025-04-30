@@ -3,7 +3,7 @@ import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import '../assets/style/product.css'
 import '../assets/products/products.json'
 import { useAuth } from './../context/GlobalState';
-export default function Product({ image, price, title, rating, id ,category }) {
+export default function Product({ image, price, title, rating, id ,category ,description}) {
     const { dispatch, basket } = useAuth();
     const addToBascket = () => {
         console.log('added to basket')
@@ -16,7 +16,8 @@ export default function Product({ image, price, title, rating, id ,category }) {
                 image: image,
                 price: price,
                 rating: rating,
-                category: category
+                category: category,
+                description: description
             }
         })
     }
@@ -28,6 +29,7 @@ export default function Product({ image, price, title, rating, id ,category }) {
     <img src={image} alt="product-img" className=" h-50" />
     <div className=" m-2 mt-6">
       <p className="m-2 mt-6">{title}</p>
+      <p className="m-2 mt-6">{description}</p>
       <p className="m-2 mt-6">{category}</p>
       <p className="m-2">
         <small>$</small><strong>{price}</strong>
