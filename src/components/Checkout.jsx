@@ -13,17 +13,19 @@ export default function Checkout() {
       <div className="container flex  "> 
         <div className="left-box pr-4 w-3/4 ">
           <img src={checkoutImage} alt="checkout" className='w-full' />
-          <div className='p-5'> Hello, {user ? user.email : null}</div>
+          <div className='p-5'> Hello, {user ? user.email : 'guest'}</div>
 
           {
             basket.map((item, index) => {
+         
               return (<CheckoutProduct
                 key={index}
                 id={item.id}
                 title={item.title}
-                image={item.image}
+                image={item.images}
                 price={item.price}
-                rating={item.rating}  />)
+                rating={item.rating}
+                 brand={item.brand }  />)
             })
           }
         </div>
